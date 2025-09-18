@@ -1,0 +1,89 @@
+/* Colega Portfolio — Light & fresh theme */
+:root{
+  --bg:#f7f9fc;
+  --ink:#1d2433;
+  --muted:#5d6b85;
+  --surface:#ffffff;
+  --primary:#00b894;     /* verde menta */
+  --primary-ink:#05241f;
+  --ring:rgba(0,184,148,.25);
+  --radius:16px;
+  --shadow: 0 10px 30px rgba(16,27,53,.08);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+  background:
+    radial-gradient(900px 500px at 10% -200px, #d9fff5 0, transparent 60%),
+    radial-gradient(800px 460px at 110% 0, #e4ecff 0, transparent 60%),
+    var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+}
+
+.container{width:min(1100px,92vw);margin:auto}
+.site-header{
+  position:sticky;top:0;z-index:5;
+  background:rgba(247,249,252,.85); backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid #e8eef7;
+}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{text-decoration:none;color:var(--ink);font-weight:800}
+.menu{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.menu a{color:var(--muted);text-decoration:none;padding:.5rem .75rem;border-radius:10px}
+.menu a:hover{background:#eef4ff;color:var(--ink)}
+.nav-toggle{display:none;background:none;border:1px solid #d7e2f1;color:var(--ink);padding:.35rem .55rem;border-radius:10px}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;padding:3.5rem 0 2rem}
+.hero-text h1{font-size:clamp(2rem,2.6vw + 1.2rem,3.3rem);margin:.2rem 0 1rem}
+.hero-text h1 span{color:var(--primary)}
+.lead{font-size:1.05rem;color:var(--muted);max-width:62ch}
+.cta{display:flex;gap:1rem;margin-top:1rem}
+.btn{display:inline-block;border:1px solid #dbe6f5;padding:.7rem 1rem;border-radius:12px;color:var(--ink);text-decoration:none;box-shadow: var(--shadow);background:var(--surface)}
+.btn.primary{background:var(--primary);color:var(--primary-ink);border-color:transparent;font-weight:600}
+.btn.small{padding:.45rem .7rem;font-size:.9rem}
+.btn[aria-disabled="true"]{opacity:.6;pointer-events:none}
+
+.hero-illustration{position:relative}
+.blob{
+  width:220px;height:220px;border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, #00b894 0, #55efc4 40%, #b2fff0 100%);
+  filter:blur(6px);opacity:.9; position:absolute; right:10%; top:0;
+}
+.card{
+  position:relative; background:var(--surface); border:1px solid #e7edf7; border-radius:var(--radius);
+  padding:1.2rem; box-shadow: var(--shadow); margin-top:5.5rem;
+}
+.card h3{margin-top:0}
+.card ul{margin:.5rem 0 0 1rem}
+
+.section{padding:2.5rem 0}
+.section h2{font-size:1.8rem;margin:0 0 1rem}
+.chips{display:flex;gap:.6rem;flex-wrap:wrap;list-style:none;padding:0}
+.chips li{background:#eef8f6;border:1px solid #c6efe5;padding:.35rem .6rem;border-radius:999px}
+
+.grid.two{display:grid;gap:1rem;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:1rem}
+.grid.three{display:grid;gap:1rem;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:1rem}
+.project .tags{display:flex;gap:.4rem;list-style:none;padding:0;margin:.7rem 0}
+.tags li{background:#eef4ff;border:1px solid #dbe6f5;padding:.25rem .5rem;border-radius:999px;font-size:.85rem}
+.links{display:flex;gap:.5rem;margin-top:.6rem}
+
+.contact{display:grid;gap:.8rem;max-width:600px;margin-top:.6rem}
+.contact input,.contact textarea{
+  width:100%;padding:.7rem .8rem;border-radius:12px;border:1px solid #dbe6f5;background:#fff;color:var(--ink);outline:none;
+}
+.contact input:focus,.contact textarea:focus{box-shadow:0 0 0 4px var(--ring)}
+
+.site-footer{border-top:1px solid #e7edf7;margin-top:2rem;padding:1.2rem 0;color:var(--muted)}
+
+/* Responsivo */
+@media (max-width: 860px){
+  .hero{grid-template-columns:1fr;padding:3rem 0 1rem}
+  .grid.two{grid-template-columns:1fr}
+  .grid.three{grid-template-columns:1fr}
+  .nav-toggle{display:inline-block}
+  .menu{display:none}
+  .menu.open{display:flex;flex-direction:column;position:absolute;top:60px;right:4vw;background:#fff;padding:.6rem;border:1px solid #e7edf7;border-radius:12px;box-shadow: var(--shadow)}
+}

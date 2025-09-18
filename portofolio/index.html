@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portefólio — Colega</title>
+  <meta name="description" content="Portefólio simples para estudante de programação.">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container">
+      <a class="logo" href="#top">colega.dev</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Olá, sou o <span id="nome">Colega</span> 👋</h1>
+        <p class="lead">
+          Estudante de programação. Interessa-me escrever código limpo e acessível, com foco na experiência do utilizador.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projetos">Projetos</a>
+          <a class="btn" href="#contacto">Fala comigo</a>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="card">
+          <h3>Stack</h3>
+          <ul>
+            <li>C / C++</li>
+            <li>Java / C#</li>
+            <li>JavaScript</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="container section">
+      <h2>Sobre mim</h2>
+      <p>
+        Este é um template pronto a editar. Troca <strong>Colega</strong> pelo nome do teu amigo e personaliza a bio com objetivos,
+        interesses e experiência. Mantém o tom curto e profissional.
+      </p>
+    </section>
+
+    <section id="skills" class="container section">
+      <h2>Skills</h2>
+      <ul class="chips">
+        <li>C</li><li>C++</li><li>C#</li><li>Java</li><li>JavaScript</li><li>HTML</li><li>CSS</li>
+      </ul>
+      <div class="grid three">
+        <article class="card">
+          <h3>Front-end</h3>
+          <p>Layouts responsivos, acessibilidade e performance.</p>
+        </article>
+        <article class="card">
+          <h3>Back-end</h3>
+          <p>Conceitos de APIs, persistência e boas práticas.</p>
+        </article>
+        <article class="card">
+          <h3>Ferramentas</h3>
+          <p>Git/GitHub, VS Code, terminais e automatização com npm.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projetos" class="container section">
+      <h2>Projetos</h2>
+      <div class="grid two">
+        <article class="card project">
+          <h3>App de notas (exemplo)</h3>
+          <p>App web leve para criar e organizar notas.</p>
+          <ul class="tags"><li>JS</li><li>HTML</li><li>CSS</li></ul>
+          <div class="links">
+            <a class="btn small" href="#" aria-disabled="true">Repo</a>
+            <a class="btn small" href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+        <article class="card project">
+          <h3>CLI utilitária (exemplo)</h3>
+          <p>Ferramenta de linha de comandos para automatizar tarefas.</p>
+          <ul class="tags"><li>C++</li><li>Algoritmos</li></ul>
+          <div class="links">
+            <a class="btn small" href="#" aria-disabled="true">Repo</a>
+            <a class="btn small" href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="container section">
+      <h2>Contacto</h2>
+      <p>Troca pelo email real: <a href="mailto:email@exemplo.com">email@exemplo.com</a></p>
+      <form class="contact" onsubmit="event.preventDefault(); alert('Personaliza este formulário ou remove-o.');">
+        <label>Nome<input type="text" required></label>
+        <label>Email<input type="email" required></label>
+        <label>Mensagem<textarea rows="4" required></textarea></label>
+        <button class="btn primary" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Colega — Portefólio.</p>
+    </div>
+  </footer>
+
+  <script>
+    const btn=document.querySelector('.nav-toggle');
+    const menu=document.querySelector('#menu');
+    btn?.addEventListener('click',()=>{
+      const open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('open');
+    });
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
