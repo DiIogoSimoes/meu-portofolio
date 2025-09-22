@@ -1,4 +1,4 @@
-# Portefólio (variante light — colega)
+# Portefólio
 Template simples com esquema de cores diferente (menta/verde).
 Este projeto foi o meu primeiro portofólio feito na UC 617.
 Autor: Diogo Simões 
