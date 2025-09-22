@@ -23,6 +23,11 @@ body{
   line-height:1.7;
 }
 
+.projeto{
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .container{width:min(1100px,92vw);margin:auto}
 .site-header{
   position:sticky;top:0;z-index:5;
